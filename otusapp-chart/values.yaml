@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: rksalov/otusapp
+
+ingress:
+  host: arch.homework
+
+service:
+  type: NodePort
+  port: 8000
+
+application:
+  flask_app: "application"
+  greeting: "Alloha"
+
+postgresql:
+  enabled: true
+  postgresqlUsername: otusappdb_user
+  postgresqlPassword: otusappdb_password
+  postgresqlDatabase: otusappdb
+  service:
+    port: 5432
